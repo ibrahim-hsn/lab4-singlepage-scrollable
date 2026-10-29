@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       showToast("Opening your email app…");
-      window.location.href = `mailto:Ibrahim..bin.hsn@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:ibrahim.bin.hsn@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 });
