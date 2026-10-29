@@ -1,107 +1,101 @@
 /**
- * Bento Developer Portfolio Controller
- * Vanilla JavaScript (No Frameworks, No Dependencies)
- * Ibrahim Bin Hassan — Aspiring AI / Machine Learning Engineer
+ * Developer Portfolio — vanilla JS, no dependencies.
+ * Ibrahim Bin Hassan
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Navbar Scroll Elevation
+  /* 1. Navbar elevation on scroll */
   const navbar = document.querySelector(".top-navbar");
   if (navbar) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 20) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
+    const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 
-  // 2. Active Section Navigation Tracking
-  const sections = document.querySelectorAll("section[id], div[id='contact']");
-  const navLinks = document.querySelectorAll(".nav-link");
+  /* 2. Active section tracking (sections are now top-level, so this works) */
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = Array.from(document.querySelectorAll(".nav-links .nav-link"));
 
-  if ("IntersectionObserver" in window && sections.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const activeId = entry.target.getAttribute("id");
-          navLinks.forEach((link) => {
-            if (link.getAttribute("href") === `#${activeId}`) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
-        }
-      });
-    }, {
-      rootMargin: "-25% 0px -65% 0px",
-      threshold: 0
-    });
+  if ("IntersectionObserver" in window && sections.length && navLinks.length) {
+    const setActive = (id) => {
+      navLinks.forEach((link) =>
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`)
+      );
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
 
     sections.forEach((sec) => observer.observe(sec));
   }
 
-  // 3. Mobile Menu Toggle
+  /* 3. Mobile menu toggle (with aria-expanded) */
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileDropdown = document.getElementById("mobile-dropdown");
 
   if (mobileBtn && mobileDropdown) {
-    mobileBtn.addEventListener("click", () => {
-      mobileDropdown.classList.toggle("open");
-      const icon = mobileBtn.querySelector(".material-symbols-outlined");
-      if (icon) {
-        icon.textContent = mobileDropdown.classList.contains("open") ? "close" : "menu";
-      }
-    });
+    const icon = mobileBtn.querySelector(".material-symbols-outlined");
 
-    mobileDropdown.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileDropdown.classList.remove("open");
-        const icon = mobileBtn.querySelector(".material-symbols-outlined");
-        if (icon) icon.textContent = "menu";
-      });
+    const setMenu = (open) => {
+      mobileDropdown.classList.toggle("open", open);
+      mobileBtn.setAttribute("aria-expanded", String(open));
+      mobileBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      if (icon) icon.textContent = open ? "close" : "menu";
+    };
+
+    mobileBtn.addEventListener("click", () =>
+      setMenu(mobileBtn.getAttribute("aria-expanded") !== "true")
+    );
+
+    mobileDropdown.querySelectorAll("a").forEach((link) =>
+      link.addEventListener("click", () => setMenu(false))
+    );
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileDropdown.classList.contains("open")) {
+        setMenu(false);
+        mobileBtn.focus();
+      }
     });
   }
 
-  // 4. Contact Form Handling
+  /* 4. Contact form — honest mailto handoff (nothing is sent silently) */
   const contactForm = document.getElementById("portfolio-contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("sender-name")?.value || "";
-      const email = document.getElementById("sender-email")?.value || "";
-      const topic = document.getElementById("sender-topic")?.value || "";
-      const message = document.getElementById("sender-message")?.value || "";
 
-      // Toast notification
-      showToast(`Thank you, ${name}! Your transmission has been queued.`);
+      if (!contactForm.reportValidity()) return;
 
-      // Optional mailto trigger
-      const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${topic} - from ${name}`);
-      const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const value = (id) => (document.getElementById(id)?.value || "").trim();
+      const name = value("sender-name");
+      const email = value("sender-email");
+      const topic = value("sender-topic");
+      const message = value("sender-message");
 
-      contactForm.reset();
+      const subject = encodeURIComponent(`[Portfolio] ${topic} — ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\n${message}`
+      );
 
-      setTimeout(() => {
-        window.location.href = `mailto:Ibrahim..bin.hsn@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-      }, 1200);
+      showToast("Opening your email app…");
+      window.location.href = `mailto:Ibrahim..bin.hsn@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 });
 
-// Toast notification display helper
+/* Toast helper */
 function showToast(message) {
-  let toast = document.getElementById("toast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "toast";
-    document.body.appendChild(toast);
-  }
+  const toast = document.getElementById("toast");
+  if (!toast) return;
   toast.textContent = message;
-  toast.className = "show";
-  setTimeout(() => {
-    toast.className = toast.className.replace("show", "");
-  }, 4000);
+  toast.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove("show"), 4000);
 }

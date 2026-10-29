@@ -3,267 +3,250 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ibrahim Bin Hassan // Aspiring AI / Machine Learning Engineer</title>
-  <meta name="description" content="Portfolio of Ibrahim Bin Hassan — Computer Science undergraduate at Qarshi University focused on AI/ML, Data Structures, Algorithms, and practical Systems Engineering."/>
+  <title>Ibrahim Bin Hassan — Aspiring AI / Machine Learning Engineer</title>
+  <meta name="description" content="Portfolio of Ibrahim Bin Hassan — Computer Science undergraduate at Qarshi University focused on AI/ML, data structures, algorithms, and practical systems work."/>
 
-  <!-- Stylesheet (Pure CSS, No Frameworks) -->
+  <!-- Social share -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Ibrahim Bin Hassan — Aspiring AI / ML Engineer"/>
+  <meta property="og:description" content="Computer Science undergraduate focused on AI/ML, algorithms, and practical systems work. Seeking an AI/ML internship."/>
+
+  <!-- Inline SVG favicon (coffee cup, matches identity) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23211914'/%3E%3Cpath d='M9 12h11v6a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4z' fill='none' stroke='%23B77A4A' stroke-width='2'/%3E%3Cpath d='M20 13h2.5a2.5 2.5 0 0 1 0 5H20' fill='none' stroke='%23B77A4A' stroke-width='2'/%3E%3C/svg%3E"/>
+
+  <!-- Fonts (trimmed to used weights) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+  <!-- Stylesheet (pure CSS, no frameworks) -->
   <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- Structured data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ibrahim Bin Hassan",
+    "jobTitle": "Aspiring AI / Machine Learning Engineer",
+    "email": "mailto:Ibrahim..bin.hsn@gmail.com",
+    "telephone": "+923391221222",
+    "url": "https://github.com/ibrahim-hsn",
+    "sameAs": ["https://github.com/ibrahim-hsn"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Qarshi University" }
+  }
+  </script>
 </head>
 <body>
 
-  <!-- ========================================================================= -->
-  <!-- 1. TOP DOCKED NAVIGATION BAR (Flush connected to top)                     -->
-  <!-- ========================================================================= -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION                                                        -->
+  <!-- ===================================================================== -->
   <header class="top-navbar">
     <div class="nav-container">
-      <!-- Brand Wordmark -->
       <a class="nav-brand" href="#about">
-        <span class="material-symbols-outlined">terminal</span>
+        <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
         <span>Ibrahim Bin Hassan <span class="brand-tag">// AI &amp; ML</span></span>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <nav class="nav-menu">
+      <nav class="nav-menu" aria-label="Primary">
         <div class="nav-links">
-          <a class="nav-link active" href="#about">About</a>
-          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#about">About</a>
           <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#experience">Experience</a>
           <a class="nav-link" href="#skills">Skills</a>
           <a class="nav-link" href="#contact">Contact</a>
         </div>
 
-        <!-- CV Download Action Button -->
         <a class="btn-resume" href="assetts/Ibrahim_Bin_Hassan_CV.pdf" target="_blank" download="Ibrahim_Bin_Hassan_CV.pdf">
           <span>Download CV</span>
-          <span class="material-symbols-outlined" style="font-size: 15px;">download</span>
+          <span class="material-symbols-outlined" style="font-size:15px" aria-hidden="true">download</span>
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
-          <span class="material-symbols-outlined">menu</span>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-dropdown">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
         </button>
       </nav>
     </div>
 
-    <!-- Mobile Dropdown Navigation -->
     <div id="mobile-dropdown" class="mobile-dropdown">
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#experience">Experience</a>
       <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#experience">Experience</a>
       <a class="nav-link" href="#skills">Skills</a>
       <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-link nav-link-cv" href="assetts/Ibrahim_Bin_Hassan_CV.pdf" target="_blank" download="Ibrahim_Bin_Hassan_CV.pdf">Download CV</a>
     </div>
   </header>
 
-  <!-- ========================================================================= -->
-  <!-- MAIN CONTAINER (Bento Grid Architecture)                                  -->
-  <!-- ========================================================================= -->
-  <main class="main-wrapper">
+  <main class="main-wrapper" id="main">
 
-    <!-- ======================================================================= -->
-    <!-- 2. HERO BENTO SECTION                                                   -->
-    <!-- ======================================================================= -->
-    <section class="hero-grid" id="about">
-      <!-- LEFT CLUSTER (Span 8) -->
-      <div class="hero-left-col">
-        <!-- Subrow Top: Name Title Card + Portrait Card -->
-        <div class="hero-subrow-top">
-          
-          <!-- Large Typographic Display Card -->
-          <article class="card hero-title-card">
-            <div class="card-top-meta">
-              <span class="pulse-dot-wrapper">
-                <span class="pulse-dot"></span>
-                AI &amp; MACHINE LEARNING
+    <!-- =================================================================== -->
+    <!-- HERO / ABOUT                                                        -->
+    <!-- =================================================================== -->
+    <section class="hero" id="about" aria-labelledby="hero-name">
+      <div class="hero-top">
+        <article class="card hero-title-card">
+          <div class="card-top-meta">
+            <span class="pulse-dot-wrapper">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              AI &amp; MACHINE LEARNING
+            </span>
+            <span class="meta-dim">BSCS // 2024–PRESENT</span>
+          </div>
+
+          <h1 class="hero-name-heading" id="hero-name">
+            <span>IBRAHIM</span>
+            <span class="last-name">BIN HASSAN</span>
+          </h1>
+
+          <div class="card-bottom-meta">
+            <span class="meta-title">ASPIRING AI / ML ENGINEER</span>
+            <span class="meta-location">LAHORE, PAKISTAN</span>
+          </div>
+        </article>
+
+        <article class="card hero-portrait-card">
+          <img class="hero-portrait-img"
+               src="assetts/replace.png"
+               alt="Portrait of Ibrahim Bin Hassan"/>
+          <div class="portrait-overlay" aria-hidden="true">
+            <div class="portrait-caption">
+              <span class="portrait-name">Ibrahim Bin Hassan</span>
+              <span class="portrait-badge" title="AI &amp; Machine Learning">
+                <span class="material-symbols-outlined" style="font-size:16px">psychology</span>
               </span>
-              <span style="color: rgba(217, 192, 160, 0.65);">BSCS // 2024–PRESENT</span>
             </div>
-
-            <div class="hero-name-heading">
-              <span>IBRAHIM</span>
-              <span class="last-name">BIN HASSAN</span>
-            </div>
-
-            <div class="card-bottom-meta">
-              <span class="meta-title">ASPIRING AI / ML ENGINEER</span>
-              <span class="meta-location">LAHORE, PAKISTAN</span>
-            </div>
-          </article>
-
-          <!-- Portrait Card (Uses replace.png) -->
-          <article class="card hero-portrait-card">
-            <img class="hero-portrait-img" 
-                 src="assetts/replace.png" 
-                 alt="Portrait of Ibrahim Bin Hassan — Aspiring AI / Machine Learning Engineer"/>
-            <div class="portrait-overlay">
-              <div class="portrait-caption">
-                <span class="portrait-name">Ibrahim Bin Hassan</span>
-                <span class="portrait-badge" title="AI & Machine Learning">
-                  <span class="material-symbols-outlined" style="font-size: 16px;">psychology</span>
-                </span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Subrow Bottom: Bio Card + Contact CTA Card -->
-        <div class="hero-subrow-bottom">
-          <!-- Bio Card from CV -->
-          <article class="card bio-card">
-            <div class="card-top-meta">
-              <span class="pulse-dot-wrapper">
-                <span class="status-indicator"></span>
-                CORE FOCUS
-              </span>
-              <span style="color: rgba(216, 201, 183, 0.7);">PROFILE</span>
-            </div>
-            <p class="bio-text">
-              Computer Science undergraduate at <strong>Qarshi University</strong> focused on artificial intelligence and machine learning. Coursework completed in data structures, design and analysis of algorithms, and database design, plus practical Java (OOP), C++ and CLI work. Nearly a year of professional experience where accuracy, volume and clear communication were measured daily.
-            </p>
-            <div class="tag-list">
-              <span>JAVA (OOP)</span>
-              <span>•</span>
-              <span>C++</span>
-              <span>•</span>
-              <span>PYTHON FOR AI/ML</span>
-              <span>•</span>
-              <span>CLI</span>
-            </div>
-          </article>
-
-          <!-- Contact Interactive Card (CTA) -->
-          <a class="card card-chocolate cta-card" href="#contact">
-            <div class="cta-header">
-              <span class="cta-subtext">Seeking AI/ML Internship?</span>
-              <div class="cta-icon-circle">
-                <span class="material-symbols-outlined">arrow_outward</span>
-              </div>
-            </div>
-            <div class="cta-body">
-              <div class="cta-title">GET IN TOUCH</div>
-              <div class="cta-email">Ibrahim..bin.hsn@gmail.com</div>
-              <div class="cta-phone">+92 3391221222</div>
-            </div>
-          </a>
-        </div>
+          </div>
+        </article>
       </div>
 
-      <!-- RIGHT COLUMN: Experience from CV -->
-      <aside class="card experience-card" id="experience">
-        <div class="exp-header">
-          <div class="exp-title-row">
-            <span class="material-symbols-outlined">work</span>
-            <h2 class="exp-heading">EXPERIENCE</h2>
+      <div class="hero-bottom">
+        <article class="card bio-card">
+          <div class="card-top-meta">
+            <span class="pulse-dot-wrapper">
+              <span class="status-indicator" aria-hidden="true"></span>
+              PROFILE
+            </span>
           </div>
-          <span class="badge-tag">2 ROLES</span>
-        </div>
+          <p class="bio-text">
+            Computer Science undergraduate at <strong>Qarshi University</strong>, focused on artificial intelligence and machine learning. I pair core CS theory — data structures, algorithms, database design — with nearly a year of professional experience where accuracy and clear communication were measured daily.
+          </p>
+          <ul class="tag-list">
+            <li>Java (OOP)</li>
+            <li>C++</li>
+            <li>Algorithms</li>
+            <li>Databases</li>
+            <li>CLI</li>
+          </ul>
+        </article>
 
-        <div class="exp-content">
-          <!-- Role 1: Oakmount -->
-          <div class="role-block">
-            <div class="role-dates">
-              <span class="date">APRIL 2025 — NOVEMBER 2025</span>
-              <span class="loc">U.S. MARKET</span>
-            </div>
-            <div>
-              <h3 class="role-title">Customer Sales Representative</h3>
-              <p class="role-company">OAKMOUNT • Lahore, Pakistan</p>
-            </div>
-            <ul class="role-points">
-              <li><strong>High-Volume Execution:</strong> Managed a 400+ daily outbound dial pipeline into the U.S. logistics market without losing accuracy.</li>
-              <li><strong>Pattern Recognition:</strong> Tracked outcomes across thousands of monthly interactions and prioritized segments that converted.</li>
-              <li><strong>Communication Under Pressure:</strong> Articulated value clearly in English to U.S. clients across night-shift time zones.</li>
-            </ul>
+        <a class="card card-chocolate cta-card" href="#contact">
+          <div class="cta-header">
+            <span class="cta-subtext">Open to AI / ML internships</span>
+            <span class="cta-icon-circle" aria-hidden="true">
+              <span class="material-symbols-outlined">arrow_outward</span>
+            </span>
           </div>
-
-          <!-- Role 2: Flymust Travel and Tours -->
-          <div class="role-block">
-            <div class="role-dates">
-              <span class="date">AUGUST 2024 — OCTOBER 2024</span>
-              <span class="loc">B2B OPERATIONS</span>
-            </div>
-            <div>
-              <h3 class="role-title">B2B Operations Intern</h3>
-              <p class="role-company">FLYMUST TRAVEL AND TOURS • Lahore, Pakistan</p>
-            </div>
-            <ul class="role-points">
-              <li><strong>Structured Data Handling:</strong> Managed ticketing and Umrah department records with 100% accuracy on sensitive partnership data.</li>
-              <li><strong>Command-Line Workflows:</strong> Used CLI tools for high-efficiency data processing and system navigation.</li>
-              <li><strong>Process Documentation:</strong> Streamlined B2B documentation so recurring workflows stayed repeatable.</li>
-            </ul>
+          <div class="cta-body">
+            <span class="cta-title">Get in touch</span>
+            <span class="cta-hint">Jump to contact →</span>
           </div>
-        </div>
-      </aside>
+        </a>
+      </div>
     </section>
 
-    <!-- ======================================================================= -->
-    <!-- 3. PROJECTS SECTION (Only 2 Projects, No Images, Links Only)            -->
-    <!-- ======================================================================= -->
-    <section id="projects">
+    <!-- =================================================================== -->
+    <!-- PROJECTS (promoted up, expandable details)                          -->
+    <!-- =================================================================== -->
+    <section id="projects" aria-labelledby="projects-heading">
       <div class="section-header">
         <div class="section-title">
-          <span class="material-symbols-outlined">code_blocks</span>
-          <h2>FEATURED PROJECTS</h2>
+          <span class="material-symbols-outlined" aria-hidden="true">code_blocks</span>
+          <h2 id="projects-heading">Projects</h2>
         </div>
-        <span class="section-badge">2 SELECTED WORKS</span>
+        <span class="section-badge">2 selected works</span>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: Website Project (Midnight Velvet) -->
+        <!-- Project 1 -->
         <article class="card project-card">
           <div>
             <div class="project-top-row">
-              <span class="project-category">WEB DEVELOPMENT &amp; PRODUCT SHOWCASE</span>
-              <span class="material-symbols-outlined" style="color: var(--accent-caramel);">web</span>
+              <span class="project-category">Web development</span>
+              <span class="material-symbols-outlined project-icon" aria-hidden="true">web</span>
             </div>
-            <h3 class="project-title">Midnight Velvet &mdash; Product Website</h3>
+            <h3 class="project-title">Midnight Velvet — Product Website</h3>
             <p class="project-desc">
-              A responsive product showcase website engineered to demonstrate modern frontend web development skills, elegant UI/UX design patterns, seamless cross-device layout structuring, and optimized web performance.
+              A responsive product-showcase site built to practise modern frontend development, clean UI patterns, and cross-device layout.
             </p>
+
+            <details class="project-details">
+              <summary>
+                <span class="summary-label">Details</span>
+                <span class="material-symbols-outlined summary-chevron" aria-hidden="true">expand_more</span>
+              </summary>
+              <ul class="details-list">
+                <li>Responsive layout structured for mobile, tablet, and desktop.</li>
+                <li>Hand-written HTML, CSS, and JavaScript — no frameworks.</li>
+                <li>Deployed on Vercel.</li>
+              </ul>
+            </details>
           </div>
 
           <div class="project-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">Web Development</span>
-              <span class="tech-pill">HTML5</span>
-              <span class="tech-pill">CSS3</span>
-              <span class="tech-pill">JavaScript</span>
-              <span class="tech-pill">Vercel</span>
-            </div>
+            <ul class="tech-pills">
+              <li class="tech-pill">HTML5</li>
+              <li class="tech-pill">CSS3</li>
+              <li class="tech-pill">JavaScript</li>
+              <li class="tech-pill">Vercel</li>
+            </ul>
             <div class="project-links">
               <a class="project-btn project-btn-primary" href="https://midnight-velvet.vercel.app/" target="_blank" rel="noreferrer">
-                <span>Live Website</span>
-                <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                <span>Live site</span>
+                <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true">open_in_new</span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Project 2: Algorithm Optimization Desktop App (DeveloperToolKit) -->
+        <!-- Project 2 -->
         <article class="card project-card">
           <div>
             <div class="project-top-row">
-              <span class="project-category">PYTHON DESKTOP APP &amp; ALGORITHM OPTIMIZATION</span>
-              <span class="material-symbols-outlined" style="color: var(--accent-caramel);">terminal</span>
+              <span class="project-category">Python · algorithms</span>
+              <span class="material-symbols-outlined project-icon" aria-hidden="true">terminal</span>
             </div>
-            <h3 class="project-title">DeveloperToolKit &mdash; DP Optimization Toolkit</h3>
+            <h3 class="project-title">DeveloperToolKit — DP Optimization Toolkit</h3>
             <p class="project-desc">
-              A dedicated Python desktop application engineered for dynamic programming optimization and algorithmic problem solving. Provides practical computational workflows for state-space exploration, runtime benchmarking between memoization and tabulation, and recursive algorithm optimization.
+              A Python desktop app for dynamic-programming practice: state-space exploration and runtime comparison between memoization and tabulation.
             </p>
+
+            <details class="project-details">
+              <summary>
+                <span class="summary-label">Details</span>
+                <span class="material-symbols-outlined summary-chevron" aria-hidden="true">expand_more</span>
+              </summary>
+              <ul class="details-list">
+                <li>Benchmarks recursive vs. memoized vs. tabulated solutions.</li>
+                <li>Explores state spaces for classic DP problems.</li>
+                <li>Built as a standalone desktop application.</li>
+              </ul>
+            </details>
           </div>
 
           <div class="project-footer">
-            <div class="tech-pills">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">Dynamic Programming</span>
-              <span class="tech-pill">Desktop App</span>
-              <span class="tech-pill">Algorithms</span>
-              <span class="tech-pill">Optimization</span>
-            </div>
+            <ul class="tech-pills">
+              <li class="tech-pill">Python</li>
+              <li class="tech-pill">Dynamic Programming</li>
+              <li class="tech-pill">Desktop App</li>
+            </ul>
             <div class="project-links">
               <a class="project-btn project-btn-primary" href="https://github.com/ibrahim-hsn/DeveloperToolKit" target="_blank" rel="noreferrer">
-                <span>View Repository</span>
-                <span class="material-symbols-outlined" style="font-size: 16px;">code</span>
+                <span>Repository</span>
+                <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true">code</span>
               </a>
             </div>
           </div>
@@ -271,271 +254,251 @@
       </div>
     </section>
 
-    <!-- ======================================================================= -->
-    <!-- 4. TOOLBOX, STRENGTHS & EDUCATION (From CV)                             -->
-    <!-- ======================================================================= -->
-    <section id="skills">
+    <!-- =================================================================== -->
+    <!-- EXPERIENCE (now top-level; strengths merged in as a lead band)      -->
+    <!-- =================================================================== -->
+    <section id="experience" aria-labelledby="experience-heading">
       <div class="section-header">
         <div class="section-title">
-          <span class="material-symbols-outlined">widgets</span>
-          <h2>TOOLBOX &amp; STRENGTHS</h2>
+          <span class="material-symbols-outlined" aria-hidden="true">work</span>
+          <h2 id="experience-heading">Experience</h2>
         </div>
-        <span class="section-badge">CAPABILITIES &amp; EDUCATION</span>
+        <span class="section-badge">2 roles · ~1 year</span>
       </div>
 
-      <!-- Toolbox & Status Row -->
-      <div class="toolbox-grid">
-        <!-- Marquee Card -->
-        <article class="card marquee-card">
-          <div class="card-title-row">
-            <div class="card-heading">
-              <span class="material-symbols-outlined">handyman</span>
-              <span>TECHNICAL SKILLS &amp; TOOLS</span>
-            </div>
-            <span class="section-badge">VERIFIED FROM CV</span>
-          </div>
+      <!-- Core strengths, merged here as a short summary band -->
+      <ul class="strengths-band">
+        <li class="strength-chip">
+          <span class="strength-num">01</span>
+          <span>High-volume, high-accuracy execution under deadlines</span>
+        </li>
+        <li class="strength-chip">
+          <span class="strength-num">02</span>
+          <span>Clear technical communication in English</span>
+        </li>
+        <li class="strength-chip">
+          <span class="strength-num">03</span>
+          <span>Fast, self-directed learning</span>
+        </li>
+      </ul>
 
-          <div class="marquee-container">
-            <div class="marquee-track">
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">code</span> Java (OOP)</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">data_object</span> C++ (Data Structures)</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">psychology</span> Python for AI/ML</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">schema</span> Dynamic Programming</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">analytics</span> Design &amp; Analysis of Algorithms</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">database</span> Database Design &amp; Data Modeling</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">terminal</span> Command-Line Interfaces (CLI)</span>
-              <span class="marquee-sep">•</span>
-              <!-- Repeat for Infinite Loop -->
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">code</span> Java (OOP)</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">data_object</span> C++ (Data Structures)</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">psychology</span> Python for AI/ML</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">schema</span> Dynamic Programming</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">analytics</span> Design &amp; Analysis of Algorithms</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">database</span> Database Design &amp; Data Modeling</span>
-              <span class="marquee-sep">•</span>
-              <span class="marquee-item"><span class="material-symbols-outlined" style="color: var(--accent-caramel);">terminal</span> Command-Line Interfaces (CLI)</span>
-            </div>
+      <div class="timeline">
+        <article class="card role-block">
+          <div class="role-dates">
+            <span class="date">Apr 2025 — Nov 2025</span>
+            <span class="loc">U.S. market</span>
           </div>
-
-          <div style="display: flex; justify-content: space-between; margin-top: 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-sand);">
-            <span>CLI WORKFLOWS • DATA PROCESSING</span>
-            <span style="color: var(--accent-caramel);">HIGH-ACCURACY EXECUTION</span>
-          </div>
+          <h3 class="role-title">Customer Sales Representative</h3>
+          <p class="role-company">Oakmount · Lahore, Pakistan</p>
+          <ul class="role-points">
+            <li>Worked a 400+ daily outbound dial pipeline into the U.S. logistics market without losing accuracy.</li>
+            <li>Tracked outcomes across thousands of monthly interactions and prioritised segments that converted.</li>
+            <li>Explained value clearly in English to U.S. clients across night-shift time zones.</li>
+          </ul>
         </article>
 
-        <!-- Status Card -->
-        <article class="card status-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.75rem;">
-            <span style="color: var(--text-sand);">STATUS</span>
-            <span class="status-pulse-badge">
-              <span class="pulse-dot" style="background-color: var(--status-green); box-shadow: 0 0 6px var(--status-green);"></span>
-              <span style="color: var(--status-green); font-weight: 600;">ACTIVE</span>
-            </span>
+        <article class="card role-block">
+          <div class="role-dates">
+            <span class="date">Aug 2024 — Oct 2024</span>
+            <span class="loc">B2B operations</span>
           </div>
-
-          <div>
-            <div class="status-headline">SEEKING AI / ML INTERNSHIP</div>
-            <p class="status-body">
-              Seeking an AI/ML internship where disciplined execution, high-accuracy problem solving, and fast learning turn into real contribution.
-            </p>
-          </div>
-
-          <a class="btn-full" href="#contact">Initiate Conversation</a>
-        </article>
-      </div>
-
-      <!-- Strengths & Education Subgrid -->
-      <div class="subgrid-strengths">
-        <!-- Core Strengths from CV -->
-        <article class="card strengths-card">
-          <div class="card-title-row" style="border-bottom: 1px solid rgba(89, 71, 59, 0.6); padding-bottom: 12px; margin-bottom: 0;">
-            <div class="card-heading">
-              <span class="material-symbols-outlined">verified</span>
-              <span>CORE STRENGTHS</span>
-            </div>
-            <span class="section-badge">3 PILLARS</span>
-          </div>
-
-          <div class="strengths-list">
-            <div class="strength-item">
-              <span class="strength-num">01</span>
-              <div class="strength-content">
-                <h4>High-Volume, High-Accuracy Execution Under Deadlines</h4>
-                <p>Proven execution through managing 400+ daily outbound dial operations into the U.S. logistics market and 100% precision on sensitive B2B ticketing records.</p>
-              </div>
-            </div>
-            <div class="strength-item">
-              <span class="strength-num">02</span>
-              <div class="strength-content">
-                <h4>Clear Technical Communication in English</h4>
-                <p>Exceptional clarity articulating technical workflows and value directly to U.S. clients across night-shift time zones, supported by standardized documentation.</p>
-              </div>
-            </div>
-            <div class="strength-item">
-              <span class="strength-num">03</span>
-              <div class="strength-content">
-                <h4>Fast, Self-Directed Learning</h4>
-                <p>Quick turnaround from core computer science theory into practical production: mastering CLI navigation, data modeling, C++, Java, and modern Python for AI/ML.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Education Card from CV -->
-        <article class="card education-card">
-          <div>
-            <div class="card-title-row" style="border-bottom: 1px solid rgba(89, 71, 59, 0.6); padding-bottom: 12px;">
-              <div class="card-heading">
-                <span class="material-symbols-outlined">school</span>
-                <span>EDUCATION</span>
-              </div>
-              <span class="section-badge">ACADEMIC</span>
-            </div>
-
-            <div style="margin-top: 14px;">
-              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem;">
-                <span style="color: var(--accent-caramel); font-weight: 600;">2024 — PRESENT</span>
-                <span style="color: rgba(217, 192, 160, 0.7);">LAHORE, PK</span>
-              </div>
-              <div class="edu-school">Qarshi University</div>
-              <div class="edu-degree">Bachelor of Science in Computer Science (BSCS)</div>
-              
-              <div class="edu-coursework">
-                <div class="edu-label">Completed Coursework:</div>
-                <div class="edu-desc">
-                  Data Structures, Design &amp; Analysis of Algorithms, Database Design, practical Java (OOP), C++, and CLI work.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="font-family: var(--font-mono); font-size: 0.6875rem; color: rgba(217, 192, 160, 0.6); text-align: right; margin-top: 16px;">
-            VERIFIED CV RECORD
-          </div>
+          <h3 class="role-title">B2B Operations Intern</h3>
+          <p class="role-company">Flymust Travel and Tours · Lahore, Pakistan</p>
+          <ul class="role-points">
+            <li>Managed ticketing and Umrah-department records with 100% accuracy on sensitive partnership data.</li>
+            <li>Used CLI tools for efficient data processing and system navigation.</li>
+            <li>Streamlined B2B documentation so recurring workflows stayed repeatable.</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <!-- ======================================================================= -->
-    <!-- 5. CONTACT & ETHOS SECTION                                              -->
-    <!-- ======================================================================= -->
-    <section class="contact-grid" id="contact">
-      <!-- Contact Form Card -->
-      <article class="card contact-form-card">
-        <div>
-          <div class="card-title-row">
-            <div class="card-heading">
-              <span class="material-symbols-outlined">mail</span>
-              <span>CONTACT IBRAHIM</span>
+    <!-- =================================================================== -->
+    <!-- SKILLS & EDUCATION                                                  -->
+    <!-- =================================================================== -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="material-symbols-outlined" aria-hidden="true">widgets</span>
+          <h2 id="skills-heading">Skills &amp; Education</h2>
+        </div>
+        <span class="section-badge">From CV</span>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skills -->
+        <article class="card skills-card">
+          <div class="skills-group">
+            <h3 class="skills-label">Languages</h3>
+            <ul class="chip-row">
+              <li class="chip">Java (OOP)</li>
+              <li class="chip">C++</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h3 class="skills-label">CS foundations</h3>
+            <ul class="chip-row">
+              <li class="chip">Data Structures</li>
+              <li class="chip">Design &amp; Analysis of Algorithms</li>
+              <li class="chip">Dynamic Programming</li>
+              <li class="chip">Database Design &amp; Modeling</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h3 class="skills-label">Tools</h3>
+            <ul class="chip-row">
+              <li class="chip">Command-Line Interfaces</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h3 class="skills-label">Currently building</h3>
+            <ul class="chip-row">
+              <li class="chip chip-learning">Python for AI / ML</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Education + status stacked -->
+        <div class="skills-side">
+          <article class="card education-card">
+            <div class="card-title-row">
+              <span class="card-heading">
+                <span class="material-symbols-outlined" aria-hidden="true">school</span>
+                Education
+              </span>
             </div>
-            <span class="section-badge">DIRECT TRANSMISSION</span>
+            <div class="edu-meta">
+              <span class="edu-period">2024 — Present</span>
+              <span class="edu-place">Lahore, PK</span>
+            </div>
+            <p class="edu-school">Qarshi University</p>
+            <p class="edu-degree">BSc Computer Science (BSCS)</p>
+            <p class="edu-desc">Coursework: data structures, design &amp; analysis of algorithms, database design, Java (OOP), C++, and CLI work.</p>
+          </article>
+
+          <article class="card card-chocolate status-card">
+            <div class="status-row">
+              <span class="status-label">Status</span>
+              <span class="status-pulse-badge">
+                <span class="pulse-dot dot-green" aria-hidden="true"></span>
+                Available
+              </span>
+            </div>
+            <p class="status-headline">Seeking an AI / ML internship</p>
+            <a class="btn-full" href="#contact">Get in touch</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CONTACT                                                             -->
+    <!-- =================================================================== -->
+    <section class="contact-grid" id="contact" aria-labelledby="contact-heading">
+      <article class="card contact-form-card">
+        <div class="card-title-row">
+          <span class="card-heading">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+            <span id="contact-heading">Contact</span>
+          </span>
+          <span class="section-badge">Opens your email app</span>
+        </div>
+
+        <form id="portfolio-contact-form" class="form-layout" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sender-name" class="form-label">Your name</label>
+              <input id="sender-name" name="name" class="form-input" placeholder="Recruiter / hiring lead" required type="text"/>
+            </div>
+            <div class="form-group">
+              <label for="sender-email" class="form-label">Email address</label>
+              <input id="sender-email" name="email" class="form-input" placeholder="name@company.com" required type="email"/>
+            </div>
           </div>
 
-          <form id="portfolio-contact-form" class="form-layout">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="sender-name" class="form-label">YOUR NAME</label>
-                <input id="sender-name" class="form-input" placeholder="e.g. Recruiter / Hiring Lead" required type="text"/>
-              </div>
-              <div class="form-group">
-                <label for="sender-email" class="form-label">EMAIL ADDRESS</label>
-                <input id="sender-email" class="form-input" placeholder="name@company.com" required type="email"/>
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="sender-topic" class="form-label">Topic</label>
+            <select id="sender-topic" name="topic" class="form-select">
+              <option value="AI / ML Internship">AI / ML internship</option>
+              <option value="Software Engineering Role">Software engineering role</option>
+              <option value="Technical Project Discussion">Technical / project discussion</option>
+              <option value="General Professional Connect">General connect</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label for="sender-topic" class="form-label">INQUIRY TOPIC</label>
-              <select id="sender-topic" class="form-select">
-                <option value="AI / ML Internship">AI / ML Internship Opportunity</option>
-                <option value="Software Engineering Role">Software Engineering Role</option>
-                <option value="Algorithm & Technical Work">Algorithm / Technical Project Discussion</option>
-                <option value="General Professional Connect">General Professional Connect</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="sender-message" class="form-label">Message</label>
+            <textarea id="sender-message" name="message" class="form-textarea" placeholder="A few lines about the role or how I can contribute…" required rows="4"></textarea>
+          </div>
 
-            <div class="form-group">
-              <label for="sender-message" class="form-label">MESSAGE</label>
-              <textarea id="sender-message" class="form-textarea" placeholder="Describe the role or how Ibrahim can contribute to your engineering goals..." required rows="4"></textarea>
-            </div>
-
-            <button class="btn-submit" type="submit">
-              <span>Submit Message</span>
-              <span class="material-symbols-outlined" style="font-size: 16px;">send</span>
-            </button>
-          </form>
-        </div>
+          <button class="btn-submit" type="submit">
+            <span>Compose email</span>
+            <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true">send</span>
+          </button>
+          <p class="form-note">This opens your email app with the message pre-filled — nothing is sent automatically.</p>
+        </form>
       </article>
 
-      <!-- Motivation / Core Ethos Card -->
-      <article class="card card-chocolate ethos-card">
-        <div>
-          <div class="card-title-row">
-            <div class="card-heading">
-              <span class="material-symbols-outlined">lightbulb</span>
-              <span>CORE ETHOS</span>
-            </div>
-            <span class="section-badge">DISCIPLINE</span>
-          </div>
-
-          <p class="ethos-quote">
-            “Rigorous software development and machine learning are built on disciplined execution. Nearly a year of demanding industry experience with hundreds of daily client interactions reinforced that technical knowledge becomes impactful only when backed by consistency, accuracy, and clear communication.”
-          </p>
-          <p class="ethos-quote-sub">
-            “Whether designing relational database models, studying algorithmic complexity, or architecting AI/ML workflows, precision is my standard.”
-          </p>
+      <article class="card card-chocolate reach-card">
+        <div class="card-title-row">
+          <span class="card-heading">
+            <span class="material-symbols-outlined" aria-hidden="true">alternate_email</span>
+            Reach me directly
+          </span>
         </div>
 
-        <div class="ethos-footer">
-          <div>
-            <div class="ethos-author">Ibrahim Bin Hassan</div>
-            <div class="ethos-city">Lahore, Pakistan</div>
-            <div class="ethos-address">24 Sapphire Park View City, Multan Road</div>
-          </div>
-          <div class="ethos-phone-badge">+92 3391221222</div>
-        </div>
+        <ul class="reach-list">
+          <li>
+            <span class="reach-key">Email</span>
+            <a class="reach-val" href="mailto:Ibrahim..bin.hsn@gmail.com">Ibrahim..bin.hsn@gmail.com</a>
+          </li>
+          <li>
+            <span class="reach-key">Phone</span>
+            <a class="reach-val" href="tel:+923391221222">+92 339 1221222</a>
+          </li>
+          <li>
+            <span class="reach-key">GitHub</span>
+            <a class="reach-val" href="https://github.com/ibrahim-hsn" target="_blank" rel="noreferrer">github.com/ibrahim-hsn</a>
+          </li>
+          <li>
+            <span class="reach-key">Location</span>
+            <span class="reach-val">Lahore, Pakistan</span>
+          </li>
+        </ul>
+
+        <a class="btn-full btn-full-outline" href="assetts/Ibrahim_Bin_Hassan_CV.pdf" target="_blank" download="Ibrahim_Bin_Hassan_CV.pdf">
+          <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true">download</span>
+          Download CV
+        </a>
       </article>
     </section>
 
   </main>
 
-  <!-- ========================================================================= -->
-  <!-- 6. FOOTER (Docked Full Width)                                             -->
-  <!-- ========================================================================= -->
+  <!-- ===================================================================== -->
+  <!-- FOOTER                                                                -->
+  <!-- ===================================================================== -->
   <footer class="site-footer">
     <div class="footer-container">
       <div>
         <div class="footer-brand">Ibrahim Bin Hassan // AI &amp; ML</div>
-        <p class="footer-copy">© 2026 Ibrahim Bin Hassan. Built with precision &amp; discipline.</p>
+        <p class="footer-copy">© 2026 Ibrahim Bin Hassan.</p>
       </div>
 
-      <div class="footer-nav">
+      <nav class="footer-nav" aria-label="Footer">
         <a class="footer-link" href="https://github.com/ibrahim-hsn" target="_blank" rel="noreferrer">GitHub</a>
         <a class="footer-link" href="mailto:Ibrahim..bin.hsn@gmail.com">Email</a>
-        <a class="footer-link" href="tel:+923391221222">+92 3391221222</a>
-        <a class="footer-link" style="text-decoration: underline;" href="assetts/Ibrahim_Bin_Hassan_CV.pdf" target="_blank" download="Ibrahim_Bin_Hassan_CV.pdf">Download CV</a>
-        <div class="footer-status-pill">
-          <span class="pulse-dot" style="width: 6px; height: 6px; background-color: var(--status-green); box-shadow: none;"></span>
-          <span>AVAILABLE FOR INTERNSHIP</span>
-        </div>
-      </div>
+        <a class="footer-link" href="assetts/Ibrahim_Bin_Hassan_CV.pdf" target="_blank" download="Ibrahim_Bin_Hassan_CV.pdf">CV</a>
+        <span class="footer-status-pill">
+          <span class="pulse-dot dot-green" style="width:6px;height:6px;box-shadow:none" aria-hidden="true"></span>
+          Available for internship
+        </span>
+      </nav>
     </div>
   </footer>
 
-  <!-- Toast Notification Feedback Element -->
-  <div id="toast"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
 
-  <!-- Vanilla JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
